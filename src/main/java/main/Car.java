@@ -33,13 +33,13 @@ public class Car {
     public void printSpecs(){
         System.out.print("Auto: "+brand+" ");
         System.out.print(model);
-        System.out.print(", Nopeus: "+speed+"km/h"+"\n");
+        System.out.print(", Nopeus: "+speed+" km/h"+"\n");
 
     }
 
     public void accelerate(int accelerateSpeed){
         if(accelerateSpeed<0){
-            System.out.print("Nopeuden täytyy olla positiivinen luku."+"\n");
+            System.out.print("Nopeuden täytyy olla positiivinen luku.");
             return;
         }
         setSpeed(speed + accelerateSpeed);
@@ -47,7 +47,7 @@ public class Car {
 
     public void decelerate(int decelerateSpeed){
         if(decelerateSpeed < 0){
-            System.out.print("Nopeuden täytyy olla positiivinen luku."+"\n");
+            System.out.print("Nopeuden täytyy olla positiivinen luku.");
             return;
         }
         else if(decelerateSpeed < speed){

@@ -19,7 +19,11 @@ public class App
 
         boolean exit = false;
         while(!exit) {
-            System.out.println("1) Näytä auton tila, 2) Muokkaa auton merkkiä ja mallia, 3) Kiihdytä autoa, 4) Hidasta autoa, 0) Lopeta ohjelma");
+            System.out.println("1) Näytä auton tila");
+            System.out.println("2) Muokkaa auton merkkiä ja mallia");
+            System.out.println("3) Kiihdytä autoa");
+            System.out.println("4) Hidasta autoa");
+            System.out.println("0) Lopeta ohjelma");
             if(sc.hasNext()) {
                 int i = 0;
                 String stringInput = sc.nextLine();
@@ -29,26 +33,21 @@ public class App
                         car.printSpecs();
                         break;
                     case 2:
-                        System.out.println("Anna uusi auton merkki: ");
+                        System.out.print("Anna uusi auton merkki: ");
                         car.setBrand(sc.nextLine());
 
-                        System.out.println("Anna uusi auton malli: ");
+                        System.out.print("Anna uusi auton malli: ");
                         car.setModel(sc.nextLine());
                         break;
                     case 3:
-                        System.out.println("Kuinka monta km/h haluat kiihdyttää?");
+                        System.out.print("Kuinka monta km/h haluat kiihdyttää? ");
                         int changeSpeed = Integer.parseInt(sc.nextLine());
                         car.accelerate(changeSpeed);
                         break;
                     case 4:
-                        if(car.getSpeed()==0){
-                            System.out.println("Nopeus on 0 km/h, Autoa ei voi hidastaa.");
-                        }
-                        else{
-                        System.out.println("Kuinka monta km/h haluat hidastaa?");
+                        System.out.print("Kuinka monta km/h haluat hidastaa?" );
                         int decelerateSpeed = Integer.parseInt(sc.nextLine());
                         car.decelerate(decelerateSpeed);
-                        }
                         break;
                     case 0:
                         exit = true;
