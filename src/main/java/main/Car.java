@@ -5,6 +5,11 @@ public class Car {
     String model;
     int speed;
       
+    public Car() {
+        brand = null;
+        model = null;
+        speed = 0;
+    }
 
     public void setBrand(String brand) {
         this.brand = brand;
@@ -30,7 +35,7 @@ public class Car {
         return speed;
     }
 
-    public void printSpecs(){
+    public void status(){
         System.out.print("Auto: "+brand+" ");
         System.out.print(model);
         System.out.print(", Nopeus: "+speed+" km/h"+"\n");
@@ -39,7 +44,7 @@ public class Car {
 
     public void accelerate(int accelerateSpeed){
         if(accelerateSpeed<0){
-            System.out.print("Nopeuden täytyy olla positiivinen luku.");
+            System.out.print("Nopeuden täytyy olla positiivinen luku."+"\n");
             return;
         }
         setSpeed(speed + accelerateSpeed);
@@ -47,7 +52,7 @@ public class Car {
 
     public void decelerate(int decelerateSpeed){
         if(decelerateSpeed < 0){
-            System.out.print("Nopeuden täytyy olla positiivinen luku.");
+            System.out.print("Nopeuden täytyy olla positiivinen luku."+"\n");
             return;
         }
         else if(decelerateSpeed < speed){

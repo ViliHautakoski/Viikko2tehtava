@@ -30,7 +30,7 @@ public class App
                 i = Integer.parseInt(stringInput);
                 switch(i) {
                     case 1: 
-                        car.printSpecs();
+                        car.status();
                         break;
                     case 2:
                         System.out.print("Anna uusi auton merkki: ");
@@ -42,6 +42,9 @@ public class App
                     case 3:
                         System.out.print("Kuinka monta km/h haluat kiihdyttää? ");
                         int changeSpeed = Integer.parseInt(sc.nextLine());
+                        if(changeSpeed<0){
+                            System.out.print("Nopeuden täytyy olla positiivinen luku."+"\n");
+                        }
                         car.accelerate(changeSpeed);
                         break;
                     case 4:
@@ -53,10 +56,11 @@ public class App
                         exit = true;
                         break;
                     default:
-                        System.out.println("Syöte oli väärä.");
+                        System.out.print("Syöte oli väärä.");
                 }
             }
         }
+        System.out.print("Kiitos ohjelman käytöstä.");
         sc.close();
     }
 }
