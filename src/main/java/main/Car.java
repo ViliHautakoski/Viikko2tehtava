@@ -37,12 +37,30 @@ public class Car {
 
     }
 
-    public void accelerate(int speed){
-        if(speed<0){
-            System.out.print("Nopeuden täytyy olla positiivinen luku.");
+    public void accelerate(int accelerateSpeed){
+        if(accelerateSpeed<0){
+            System.out.print("Nopeuden täytyy olla positiivinen luku."+"\n");
             return;
         }
-        setSpeed(speed);
+        setSpeed(speed + accelerateSpeed);
     }
+
+    public void decelerate(int decelerateSpeed){
+        if(decelerateSpeed < 0){
+            System.out.print("Nopeuden täytyy olla positiivinen luku."+"\n");
+            return;
+        }
+        else if(decelerateSpeed < speed){
+            setSpeed(speed - decelerateSpeed);
+        }
+        else{
+            setSpeed(0);
+        }
+
+        
+
+        
+    }
+
 }
  

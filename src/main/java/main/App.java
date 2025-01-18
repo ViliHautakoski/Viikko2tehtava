@@ -38,10 +38,17 @@ public class App
                     case 3:
                         System.out.println("Kuinka monta km/h haluat kiihdyttää?");
                         int changeSpeed = Integer.parseInt(sc.nextLine());
-                        car.setSpeed(changeSpeed);
+                        car.accelerate(changeSpeed);
                         break;
                     case 4:
+                        if(car.getSpeed()==0){
+                            System.out.println("Nopeus on 0 km/h, Autoa ei voi hidastaa.");
+                        }
+                        else{
                         System.out.println("Kuinka monta km/h haluat hidastaa?");
+                        int decelerateSpeed = Integer.parseInt(sc.nextLine());
+                        car.decelerate(decelerateSpeed);
+                        }
                         break;
                     case 0:
                         exit = true;
@@ -51,5 +58,6 @@ public class App
                 }
             }
         }
+        sc.close();
     }
 }
