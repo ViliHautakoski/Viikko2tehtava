@@ -40,15 +40,12 @@ public class App
                         car.setModel(sc.nextLine());
                         break;
                     case 3:
-                        System.out.print("Kuinka monta km/h haluat kiihdyttää? ");
+                        System.out.println("Kuinka monta km/h haluat kiihdyttää? ");
                         int changeSpeed = Integer.parseInt(sc.nextLine());
-                        if(changeSpeed<0){
-                            System.out.print("Nopeuden täytyy olla positiivinen luku."+"\n");
-                        }
                         car.accelerate(changeSpeed);
                         break;
                     case 4:
-                        System.out.print("Kuinka monta km/h haluat hidastaa?" );
+                        System.out.println("Kuinka monta km/h haluat hidastaa? ");
                         int decelerateSpeed = Integer.parseInt(sc.nextLine());
                         car.decelerate(decelerateSpeed);
                         break;
